@@ -101,7 +101,7 @@ Federated Learning
 Output directory:
 <workspace>\outputs\gnn_vs_fl
 
-Agenda:
+Agenda（这里可以用中文描述）:
 Please run dual-domain research gap analysis. Focus on how Graph Neural Networks and Federated Learning can be combined, what technical gaps remain, what mechanisms could transfer across domains, and how to validate the ideas. Do not focus mainly on privacy, fairness, or poisoning attacks.
 ```
 
