@@ -149,7 +149,7 @@ DualGap 的核心输出包括：
 核心流程由下面的脚本实现：
 
 ```text
-skills-main/skills/dualgap/scripts/run_literature_workflow.py
+dualgap/scripts/run_literature_workflow.py
 ```
 
 它负责：
@@ -184,11 +184,11 @@ Prompt 设计也集中在这个脚本里：
 - 对两个研究方向交叉议程的启发
 - 需要进一步验证的 open questions
 
-这样设计的目的，是避免只得到“摘要式复述”，而是得到可以支撑后续 research gap 判断的证据材料。
+这些结构化笔记为后续 research gap 判断提供可追溯的证据材料。
 
 ### Review 机制细节
 
-DualGap 的 review 不是简单检查格式，而是独立 LLM 调用。笔记生成和笔记审查使用不同的 API 请求：
+DualGap 使用独立 LLM 调用审查笔记质量。笔记生成和笔记审查使用不同的 API 请求：
 
 ```text
 note_prompt(...) -> 生成论文笔记
@@ -236,7 +236,7 @@ synthesis_review_prompt(...) -> 审查综合文档
 
 `synthesis_review_prompt(...)` 会检查：
 
-- 文档是否基于 notes，而不是泛泛分类法
+- 文档是否基于 notes 形成具体、可追溯的跨方向分析
 - research gap 是否说明“现有论文为什么还没有解决”
 - proposed ideas 是否有具体机制、目标瓶颈和验证实验
 - 是否遵守用户给定的 agenda 和 exclusions
@@ -246,7 +246,7 @@ synthesis_review_prompt(...) -> 审查综合文档
 
 ### 设计原理
 
-设计上，DualGap 避免只生成泛泛摘要。它要求每篇笔记说明论文设置、方法步骤、证据边界、隐含假设、失败场景，以及对目标研究议程的具体启发。笔记生成和质量审查使用独立 LLM 调用，synthesis 也会被单独审查，以减少模板化、幻觉和未经证据支撑的 gap。
+DualGap 要求每篇笔记说明论文设置、方法步骤、证据边界、隐含假设、失败场景，以及对目标研究议程的具体启发。笔记生成、笔记审查和 synthesis 审查使用独立 LLM 调用，从而控制模板化内容、幻觉和缺少证据支撑的 gap。
 
 ## 5. 更多说明
 
