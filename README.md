@@ -2,14 +2,17 @@
 
 ## 1. Skill 介绍
 
-DualGap （ **dual-domain research gap analysis**）是一个用于阅读分析两个不同研究方向的论文，得到reashech ideas的**文献调研 skill**；
+DualGap （ **dual-domain research gap analysis**）是一个用于阅读分析两个不同研究方向的论文，得到reashech ideas的Skill；
 
 主要是用来找交叉方向的Ideas 。例如回答：方向A和方向B相结合有什么挑战没有解决？有什么独特的挑战？这一类问题
 
 **skills输入**：两个文件夹，每个文件夹中存放的是一个方向对应的论文pdf。****
 **skills输出**：每篇论文的逐篇深度笔记、独立质量审查记录、方向内总结报告、跨方向对比报告、research gaps（挑战/待解决）报告、ranked improvement ideas （调研得到的Ideas）。
 
-它适合用于寻找两个研究方向交叉处的真实研究空白。
+整个工作流基于LLM API实现，避免了因上下文爆炸导致的调研失败问题；
+
+clawhub链接：
+https://clawhub.ai/zza234s/dualgap
 
 ## 2. 环境准备
 
